@@ -25,7 +25,7 @@ Desarrollar un simulador interactivo de colisiones 2D que permita visualizar có
 
 ### Diagrama principal
 
-`diagrams/mainDiagram.drawio.png`
+![Flowchart1](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/diagrams/mainDiagram.drawio.png)
 
 ---
 
