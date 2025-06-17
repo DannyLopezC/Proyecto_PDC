@@ -4,7 +4,7 @@
 
 ### 🎯 Nombre del Proyecto
 
-**Simulador de Colisiones 2D con Python (sin POO)**
+**Simulador de Colisiones 2D con Python**
 
 ### 🔍 Problema a resolver
 
@@ -16,11 +16,16 @@ Desarrollar un simulador interactivo de colisiones 2D que permita visualizar có
 
 ### ✅ Objetivos específicos
 
-- Permitir la configuración de partículas (posición, masa, velocidad) desde la consola.
+- Permitir la configuración de partículas (posición, masa, velocidad).
 - Simular el movimiento y la colisión entre partículas.
 - Mostrar los resultados visualmente usando Pygame.
 - Calcular y mostrar datos como energía cinética y momento antes y después de cada colisión.
-- No utilizar clases ni programación orientada a objetos.
+
+## Diagramas de flujo
+
+### Diagrama principal
+
+`diagrams/mainDiagram.drawio.png`
 
 ---
 
