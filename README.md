@@ -8,7 +8,7 @@
 
 ### 🔍 Problema a resolver
 
-Comprender las colisiones en dos dimensiones es fundamental en física clásica, pero suele ser complejo sin visualización. Este proyecto busca ofrecer una herramienta educativa que simule colisiones de partículas en 2D, ayudando a visualizar los efectos de masa y velocidad en los impactos. Todo será implementado usando programación estructurada y funcional, sin clases ni objetos.
+Comprender las colisiones en dos dimensiones es fundamental en física clásica, pero suele ser complejo sin visualización. Este proyecto busca ofrecer una herramienta educativa que simule colisiones de partículas en 2D, ayudando a visualizar los efectos de masa y velocidad en los impactos.
 
 ### 🎯 Objetivo general
 
