@@ -15,12 +15,12 @@ def main():
     screen = pygame.display.set_mode((width, height))
     clock = pygame.time.Clock()
 
-    # delta time for movement
-    delta_time = 1/60
-
     # main thread
     running = True
     while running:
+        # delta time for physics
+        delta_time = clock.tick(60) / 1000.0  # seconds
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
