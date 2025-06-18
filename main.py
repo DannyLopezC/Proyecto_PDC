@@ -1,12 +1,12 @@
 import pygame
-from interfaz_gui import abrir_interfaz
-from simulacion import move_particles, detect_colissions, resolve_colissions
-from interfaz import get_users_data
-from visualizacion import draw_screen
+import interface_gui
+import simulation
+import visualization
+import interface
 
 
 def main():
-    particles = abrir_interfaz()
+    particles = interface_gui.open_interface()
     if not particles:
         return
 
@@ -15,19 +15,24 @@ def main():
     screen = pygame.display.set_mode((width, height))
     clock = pygame.time.Clock()
 
+    # delta time for movement
     delta_time = 1/60
 
+    # main thread
     running = True
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
 
-        move_particles(particles, delta_time)
-        detect_colissions(particles)
+        # physics
+        simulation.move_particles(particles, delta_time)
+        simulation.detect_colissions(particles)
 
         screen.fill((0, 0, 0))
-        draw_screen(screen, particles)
+        # draw particles based on particles data
+        visualization.draw_screen(screen, particles)
+        # change buffer
         pygame.display.flip()
         clock.tick(60)
 

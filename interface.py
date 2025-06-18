@@ -1,3 +1,5 @@
+# this was to get the data by console, currently decaprecated
+
 def get_users_data():
     n = int(input("¿Cuántas partículas quieres simular? "))
     particles = []
