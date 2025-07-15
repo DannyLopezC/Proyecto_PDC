@@ -27,7 +27,7 @@ def main():
 
         # physics
         simulation.move_particles(particles, delta_time)
-        simulation.detect_colissions(particles)
+        simulation.detect_collisions(particles)
 
         screen.fill((0, 0, 0))
         # draw particles based on particles data

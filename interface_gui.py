@@ -119,8 +119,8 @@ def open_interface():
 
                     for i in range(num):
                         # default values for particles
-                        valores_default = [100 + i*200, 100,
-                                           50 if i <= 0 else -50, 0, 20, 1]
+                        valores_default = [1 + i*2, 1,
+                                           0.5 if i <= 0 else -0.5, 0, 0.2, 1]
 
                         # create panels for everty particle
                         panel, entradas = create_particle_panel(

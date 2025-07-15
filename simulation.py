@@ -3,11 +3,11 @@ import math
 
 def move_particles(particles, delta_time):
     for p in particles:
-        p["pos"][0] += p["vel"][0] * delta_time
+        p["pos"][0] += p["vel"][0] * delta_time  # meters
         p["pos"][1] += p["vel"][1] * delta_time
 
 
-def detect_colissions(particles):
+def detect_collisions(particles):
     n = len(particles)
     for i in range(n):
         # evaluate all particles with the current
@@ -21,10 +21,10 @@ def detect_colissions(particles):
 
             # if distance is less than the radius they are colliding
             if distance <= p1["radius"] + p2["radius"]:
-                resolve_colissions(p1, p2)
+                resolve_collisions(p1, p2)
 
 
-def resolve_colissions(p1, p2):
+def resolve_collisions(p1, p2):
     # currently just inverting the velocity
     p1["vel"][0] *= -1
     p2["vel"][0] *= -1
