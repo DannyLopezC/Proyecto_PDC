@@ -1,5 +1,8 @@
 import pygame
 import pygame_gui
+import copy
+import random
+import numpy as np
 
 
 def create_input_particles_num(manager):
@@ -58,25 +61,31 @@ def create_particle_panel(manager, scroll_container, index, valores_default):
 
 
 def read_particle_data(particles_panels):
-    result = []
+    positions = []
+    velocities = []
+    radii = []
+    masses = []
+
     for _, entries in particles_panels:
         try:
             values = [float(e.get_text()) for e in entries]
-            p = {
-                "pos": [values[0], values[1]],
-                "vel": [values[2], values[3]],
-                "radius": values[4],
-                "mass": values[5],
-                "color": (255, 0, 0)
-            }
-            result.append(p)
+            positions.append([values[0], values[1]])
+            velocities.append([values[2], values[3]])
+            radii.append(values[4])
+            masses.append(values[5])
         except:
             print("Error leyendo datos de partícula")
             return None
-    return result
+
+    return (
+        np.array(positions, dtype=np.float32),
+        np.array(velocities, dtype=np.float32),
+        np.array(radii, dtype=np.float32),
+        np.array(masses, dtype=np.float32)
+    )
 
 
-def open_interface():
+def open_interface(prev_particles_num=None, prev_values=None, show_mass_prev=False):
     pygame.init()
     window = pygame.display.set_mode((600, 700))
     pygame.display.set_caption("Simulación de colisiones 2D")
@@ -86,16 +95,67 @@ def open_interface():
     input_num, generate_button = create_input_particles_num(manager)
     scroll_container = crear_scroll_container(manager)
 
+    checkbox_show_mass = pygame_gui.elements.UICheckBox(
+        relative_rect=pygame.Rect((20, 640), (30, 30)),
+        text="Mostrar masas",
+        manager=manager
+    )
+
     particles_panels = []
     button_play = None
     result = None
     running = True
+    show_mass = False
+    num = prev_particles_num
+
+    # autogeneration if there are previous data
+    if prev_particles_num and prev_values:
+        input_num.set_text(str(prev_particles_num))
+
+        for panel, _ in particles_panels:
+            panel.kill()
+        particles_panels.clear()
+
+        for i in range(prev_particles_num):
+            p = copy.deepcopy(prev_values[i])
+            pos = list(p["pos"])
+            vel = list(p["vel"])
+            valores_default = [
+                pos[0], pos[1],
+                vel[0], vel[1],
+                p["radius"], p["mass"]
+            ]
+
+            panel, entradas = create_particle_panel(
+                manager, scroll_container, i, valores_default)
+            particles_panels.append((panel, entradas))
+
+        scroll_container.set_scrollable_area_dimensions(
+            (540, prev_particles_num * 140 + 10))
+
+        if button_play:
+            button_play.kill()
+        button_play = pygame_gui.elements.UIButton(
+            relative_rect=pygame.Rect((200, 640), (200, 30)),
+            text="Iniciar Simulación", manager=manager
+        )
+
+        if show_mass_prev:
+            checkbox_show_mass._toggle_state()
 
     while running:
+
         delta_time = clock.tick(60) / 1000.0
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+
+            if event.type == pygame_gui.UI_BUTTON_PRESSED and event.ui_element == button_play:
+                result = read_particle_data(particles_panels)
+                if result is not None:
+                    show_mass = checkbox_show_mass.is_checked
+                    running = False
 
             # if any button pressed
             if event.type == pygame_gui.UI_BUTTON_PRESSED:
@@ -118,9 +178,14 @@ def open_interface():
                     particles_panels.clear()
 
                     for i in range(num):
-                        # default values for particles
-                        valores_default = [1 + i*2, 1,
-                                           0.5 if i <= 0 else -0.5, 0, 0.2, 1]
+                        valores_default = [
+                            round(random.uniform(1.0, 5.0), 2),   # X
+                            round(random.uniform(1.0, 3.0), 2),   # Y
+                            round(random.uniform(-1.0, 1.0), 2),  # VX
+                            round(random.uniform(-1.0, 1.0), 2),  # VY
+                            round(random.uniform(0.1, 0.5), 2),   # Radio
+                            round(random.uniform(0.5, 5.0), 2)    # Masa
+                        ]
 
                         # create panels for everty particle
                         panel, entradas = create_particle_panel(
@@ -151,4 +216,8 @@ def open_interface():
         pygame.display.flip()
 
     pygame.quit()
-    return result
+    if result is None:
+        return None
+
+    positions, velocities, radii, masses = result
+    return num, positions, velocities, radii, masses, show_mass
