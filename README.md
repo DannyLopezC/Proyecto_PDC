@@ -23,6 +23,12 @@ Crear una herramienta visual que permita:
 
 ---
 
+## 🖼️ Vista previa
+
+![Diagrama de flujo](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/diagrams/mainDiagram.drawio.png)
+
+---
+
 ## 🔧 Requisitos
 
 Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias son:
@@ -30,12 +36,6 @@ Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias son:
 ```bash
 pip install pygame pygame_gui numpy
 ```
-
----
-
-## 🖼️ Vista previa
-
-![Diagrama de flujo](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/diagrams/mainDiagram.drawio.png)
 
 ---
 
