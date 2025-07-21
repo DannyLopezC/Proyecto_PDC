@@ -1,23 +1,37 @@
-# 🧪 Simulador de Colisiones 2D en Python
+# 🧪 Simulador de Colisiones 2D con Python
 
-Este proyecto es un simulador educativo que permite visualizar colisiones entre partículas en dos dimensiones. Utiliza conceptos de física clásica para representar el movimiento, la masa y la interacción entre objetos en un entorno controlado.
+Este proyecto es un simulador interactivo que representa colisiones entre partículas en dos dimensiones usando física clásica. Está diseñado con fines educativos, para facilitar la comprensión de conceptos como momento, masa, velocidad y colisión elástica.
 
-## 📚 Descripción
+---
 
-La simulación de colisiones es un componente clave en física y en múltiples aplicaciones como videojuegos, simuladores y sistemas de partículas. Sin embargo, entender cómo influyen variables como la masa, la dirección y la velocidad puede ser complejo sin herramientas visuales.  
-Este proyecto ofrece una herramienta interactiva y visual que permite explorar estos fenómenos fácilmente.
+## 🎯 Objetivo del Proyecto
 
-## 🎯 Objetivos
+Crear una herramienta visual que permita:
 
-### Objetivo general
+- Configurar partículas (posición, masa, velocidad y color).
+- Simular sus movimientos y colisiones.
+- Visualizar los resultados usando la biblioteca gráfica `pygame`.
 
-Desarrollar un simulador interactivo de colisiones 2D que permita visualizar cómo interactúan partículas al colisionar, utilizando física clásica y programación estructurada en Python.
+---
 
-### Objetivos específicos
+## 📌 Características
 
-- Permitir la configuración de partículas (posición, masa, velocidad).
-- Simular el movimiento y la colisión entre partículas.
-- Visualizar el sistema de partículas usando `pygame`.
+- Soporte para múltiples partículas.
+- Visualización del movimiento en tiempo real.
+- Cálculo de colisiones elásticas basado en masa y dirección.
+- Interfaz gráfica con `pygame_gui` para cambiar parámetros.
+
+---
+
+## 🔧 Requisitos
+
+Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias son:
+
+```bash
+pip install pygame pygame_gui numpy
+```
+
+---
 
 ## 🖼️ Vista previa
 
@@ -25,18 +39,62 @@ Desarrollar un simulador interactivo de colisiones 2D que permita visualizar có
 
 ---
 
-## ⚙️ Requisitos
+## ▶️ Cómo ejecutar el proyecto
 
-Este proyecto se desarrolla en Python y utiliza las siguientes bibliotecas externas:
+1. Clona este repositorio:
 
-- [`pygame`](https://www.pygame.org/news)
-- [`pygame_gui`](https://pygame-gui.readthedocs.io/)
-- [`numpy`](https://numpy.org/)
+   ```bash
+   git clone https://github.com/DannyLopezC/Proyecto_PDC.git
+   cd Proyecto_PDC
+   ```
 
-### 📦 Instalación de dependencias
+2. Ejecuta el archivo principal:
 
-Puedes instalar los requisitos ejecutando:
+   ```bash
+   python main.py
+   ```
 
-```bash
-pip install pygame pygame_gui numpy
+   Esto abrirá la ventana del simulador con las partículas en movimiento.
+
+---
+
+## 📁 Estructura del proyecto
+
 ```
+Proyecto_PDC/
+├── main.py               # Script principal
+├── physics.py            # Lógica física de colisiones y movimiento
+├── visualization.py      # Dibujado de partículas en pantalla
+├── ui.py                 # Interfaz con pygame_gui
+├── utils.py              # Constantes y funciones auxiliares
+└── README.md             # Este archivo
+```
+
+---
+
+## 🧠 Conceptos utilizados
+
+- Cinemática 2D
+- Conservación de momento lineal
+- Colisiones elásticas
+- Vectores con `numpy`
+
+---
+
+## 📸 Ejemplo visual
+
+![Simulación](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/example.mp4)
+
+---
+
+## 📚 Créditos
+
+Proyecto desarrollado como alternativa de programación final para la asignatura **Programación de Computadores** en la Universidad Nacional de Colombia.
+
+Autor: [DannyLopezC](https://github.com/DannyLopezC)
+
+---
+
+## ⚖️ Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más información.
