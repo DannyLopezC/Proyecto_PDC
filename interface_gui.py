@@ -168,8 +168,8 @@ def open_interface(prev_particles_num=None, prev_values=None, show_mass_prev=Fal
                         print("Número inválido")
                         continue
 
-                    if not (1 <= num <= 20):
-                        print("Debe estar entre 1 y 20 partículas")
+                    if not (1 <= num <= 100):
+                        print("Debe estar entre 1 y 100 partículas")
                         continue
 
                     # clean previous panels
@@ -183,7 +183,7 @@ def open_interface(prev_particles_num=None, prev_values=None, show_mass_prev=Fal
                             round(random.uniform(1.0, 3.0), 2),   # Y
                             round(random.uniform(-1.0, 1.0), 2),  # VX
                             round(random.uniform(-1.0, 1.0), 2),  # VY
-                            round(random.uniform(0.1, 0.5), 2),   # Radio
+                            round(random.uniform(0.1, 0.2), 2),   # Radio
                             round(random.uniform(0.5, 5.0), 2)    # Masa
                         ]
 
