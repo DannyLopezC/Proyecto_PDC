@@ -94,7 +94,3 @@ Proyecto desarrollado como alternativa de programación final para la asignatura
 Autor: [DannyLopezC](https://github.com/DannyLopezC)
 
 ---
-
-## ⚖️ Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más información.
