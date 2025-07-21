@@ -83,7 +83,7 @@ Proyecto_PDC/
 
 ## 📸 Ejemplo visual
 
-![Simulación](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/example.mp4)
+![Simulación](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/example.gif)
 
 ---
 
