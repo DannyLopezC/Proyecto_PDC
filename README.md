@@ -93,5 +93,3 @@ Proyecto_PDC/
 Proyecto desarrollado como alternativa de programación final para la asignatura **Programación de Computadores** en la Universidad Nacional de Colombia.
 
 Autor: [DannyLopezC](https://github.com/DannyLopezC)
-
----
