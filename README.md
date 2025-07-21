@@ -1,33 +1,42 @@
-# Proyecto Final - Programación de Computadores UNAL
+# 🧪 Simulador de Colisiones 2D en Python
 
-## Definición de la alternativa
+Este proyecto es un simulador educativo que permite visualizar colisiones entre partículas en dos dimensiones. Utiliza conceptos de física clásica para representar el movimiento, la masa y la interacción entre objetos en un entorno controlado.
 
-### 🎯 Nombre del Proyecto
+## 📚 Descripción
 
-**Simulador de Colisiones 2D con Python**
+La simulación de colisiones es un componente clave en física y en múltiples aplicaciones como videojuegos, simuladores y sistemas de partículas. Sin embargo, entender cómo influyen variables como la masa, la dirección y la velocidad puede ser complejo sin herramientas visuales.  
+Este proyecto ofrece una herramienta interactiva y visual que permite explorar estos fenómenos fácilmente.
 
-### 🔍 Problema a resolver
+## 🎯 Objetivos
 
-Comprender las colisiones en dos dimensiones es fundamental en física clásica, pero suele ser complejo sin visualización. Este proyecto busca ofrecer una herramienta educativa que simule colisiones de partículas en 2D, ayudando a visualizar los efectos de masa y velocidad en los impactos.
-
-### 🎯 Objetivo general
+### Objetivo general
 
 Desarrollar un simulador interactivo de colisiones 2D que permita visualizar cómo interactúan partículas al colisionar, utilizando física clásica y programación estructurada en Python.
 
-### ✅ Objetivos específicos
+### Objetivos específicos
 
 - Permitir la configuración de partículas (posición, masa, velocidad).
-- Simular gravedad con el valor dado.
 - Simular el movimiento y la colisión entre partículas.
-- Mostrar los resultados visualmente usando Pygame.
-- Calcular y mostrar datos como energía cinética y momento antes y después de cada colisión.
+- Visualizar el sistema de partículas usando `pygame`.
 
-## Diagramas de flujo
+## 🖼️ Vista previa
 
-### Diagrama principal
-
-![Flowchart1](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/diagrams/mainDiagram.drawio.png)
+![Diagrama de flujo](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/diagrams/mainDiagram.drawio.png)
 
 ---
 
-Este proyecto representa una alternativa al desarrollo de videojuegos tradicionales, con un enfoque académico hacia la física y la visualización de fenómenos reales.
+## ⚙️ Requisitos
+
+Este proyecto se desarrolla en Python y utiliza las siguientes bibliotecas externas:
+
+- [`pygame`](https://www.pygame.org/news)
+- [`pygame_gui`](https://pygame-gui.readthedocs.io/)
+- [`numpy`](https://numpy.org/)
+
+### 📦 Instalación de dependencias
+
+Puedes instalar los requisitos ejecutando:
+
+```bash
+pip install pygame pygame_gui numpy
+```
