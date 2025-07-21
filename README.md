@@ -63,9 +63,10 @@ pip install pygame pygame_gui numpy
 ```
 Proyecto_PDC/
 ├── main.py               # Script principal
-├── physics.py            # Lógica física de colisiones y movimiento
+├── simulation.py         # Lógica física de colisiones y movimiento
 ├── visualization.py      # Dibujado de partículas en pantalla
-├── ui.py                 # Interfaz con pygame_gui
+├── interface_gui.py      # Interfaz con pygame_gui
+├── interface.py          # Parametros por consola, obsoleto actualmente
 ├── utils.py              # Constantes y funciones auxiliares
 └── README.md             # Este archivo
 ```
