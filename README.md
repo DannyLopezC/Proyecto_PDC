@@ -34,7 +34,17 @@ Crear una herramienta visual que permita:
 Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias son:
 
 ```bash
-pip install pygame pygame_gui numpy
+pip install pygame-ce pygame_gui numpy
+```
+
+🔴 Si se tiene la libreria de pygame instalada deberá desinstalar pygame y pygame-ce para despues volver a instalar pygame-ce para evitar conflictos.
+
+```bash
+pip uninstall pygame-ce pygame
+```
+
+```bash
+pip install pygame-ce
 ```
 
 ---
