@@ -37,7 +37,7 @@ Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias son:
 pip install pygame-ce pygame_gui numpy
 ```
 
-🔴 Si se tiene la libreria de pygame instalada deberá desinstalar pygame y pygame-ce para despues volver a instalar pygame-ce para evitar conflictos.
+🔴 Si se tiene la libreria de pygame instalada deberá desinstalar pygame y pygame-ce para despues volver a instalar pygame-ce y evitar conflictos.
 
 ```bash
 pip uninstall pygame-ce pygame
